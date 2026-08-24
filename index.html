@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>projet-formulaire</title>
   </head>
@@ -10,12 +9,104 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
 
-    
+    <h1>Je souhaite donner à Centraide</h1>
 
+   <form action="/BouthilletteAriane_TP1_formulaire/projet-formulaire/merci.html" method="get">
+      <!-- SECTION 1: DON -->
+      <fieldset>
+        <legend>Information sur votre don :</legend>
+        
+        <p>Choisissez votre option :</p>
+        <input class="type_don" type="radio" id="frequence_unique" name="frequence_don" value="unique" checked>
+        <label for="frequence_unique">Versement unique</label>
 
+        <input class="type_don" type="radio" id="frequence_periodique" name="frequence_don" value="periodique">
+        <label for="frequence_periodique">Versement périodique</label>
+        
+        <p>Montant fixe :</p>
+        <input class="type_don" type="radio" id="montant_10" name="montant_fixe" value="10">
+        <label for="montant_10">10$</label>
 
+        <input class="type_don" type="radio" id="montant_50" name="montant_fixe" value="50">
+        <label for="montant_50">50$</label>
 
+        <input class="type_don" type="radio" id="montant_100" name="montant_fixe" value="100">
+        <label for="montant_100">100$</label>
 
+        <input class="type_don" type="radio" id="montant_200" name="montant_fixe" value="200">
+        <label for="montant_200">200$</label>
 
+        <br>
+        <label for="montant_custom">Autre montant :</label>
+        <input type="number" id="montant_custom" name="montant_libre" placeholder="0"> $
+      </fieldset>
+
+      <!-- SECTION 2: COORDONNÉES -->
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+
+        <div>
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+
+        <div>
+          <label for="prenom">Prénom :</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
+
+        <div>
+          <label for="entreprise">Entreprise (facultatif) :</label>
+          <input type="text" id="entreprise" name="entreprise">
+        </div>
+
+        <div>
+          <label for="email">E-mail :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="adresse">Adresse :</label>
+          <input type="text" id="adresse" name="adresse" required>
+        </div>
+      </fieldset>
+
+      <!-- SECTION 3: PAIEMENT -->
+      <fieldset>  
+        <legend>Mode de paiement</legend>
+
+        <p>Type de carte :</p>
+        <input class="type_don" type="radio" id="carte_visa" name="type_carte" value="visa">
+        <label for="carte_visa">Visa</label>
+
+        <input class="type_don" type="radio" id="carte_mastercard" name="type_carte" value="mastercard">
+        <label for="carte_mastercard">Mastercard</label>
+
+        <input class="type_don" type="radio" id="carte_paypal" name="type_carte" value="paypal">
+        <label for="carte_paypal">PayPal</label>
+        <br><br>
+
+        <label for="cc-number">Numéro de carte :</label>
+        <input type="tel" id="cc-number" name="numero_carte" inputmode="numeric" autocomplete="cc-number" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
+        
+        <div>
+          <label for="expiration">Expiration :</label>
+          <input type="text" id="expiration" name="expiration_carte" placeholder="MM/AA" required>
+        </div>
+      </fieldset>
+
+      <!-- SECTION 4: RÉSUMÉ -->
+      <fieldset>
+        <legend>Résumé du don</legend>
+        <div>
+          <h2>Nom complet : <span id="resume_nom"></span></h2>
+        </div>
+        <div>
+          <h2>Montant : <span id="resume_montant"></span></h2>
+        </div>
+      </fieldset>
+
+      <button type="submit">Envoyer le don</button>
+    </form>
   </body>
 </html>
