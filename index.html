@@ -1,119 +1,192 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Don Centraide</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
 
-    <h1 class="text-4xl text-center">Je souhaite donner à Centraide</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Don Centraide</title>
+</head>
 
-   <form action="merci.html" method="get">
-      <!-- SECTION 1: DON -->
+<body class="content-center">
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+
+  <h1 class="text-4xl text-center">Je souhaite donner à Centraide</h1>
+
+  <form action="merci.html" method="get">
+    <!-- SECTION 1: DON -->
+    <section class="etape1">
       <fieldset class="border-2">
         <legend class="p-2">Information sur votre don :</legend>
         <div class="m-2">
-        <p class="text-red-600">Choisissez votre option :</p>
-        <input class="type_don" type="radio" id="frequence_unique" name="frequence_don" value="unique" checked>
-        <label for="frequence_unique">Versement unique</label>
+          <p class="text-red-600 hidden">Choisissez votre option :</p>
+          <input class="type_don" type="radio" id="frequence_unique" name="frequence_don" value="unique" checked>
+          <label for="frequence_unique">Versement unique</label>
 
-        <input class="type_don" type="radio" id="frequence_periodique" name="frequence_don" value="periodique">
-        <label for="frequence_periodique">Versement périodique</label>
-        
-        <p>Montant fixe :</p>
-        <input class="type_don" type="radio" id="montant_10" name="montant_fixe" value="10">
-        <label for="montant_10">10$</label>
+          <input class="type_don" type="radio" id="frequence_periodique" name="frequence_don" value="periodique">
+          <label for="frequence_periodique">Versement périodique</label>
 
-        <input class="type_don" type="radio" id="montant_50" name="montant_fixe" value="50">
-        <label for="montant_50">50$</label>
+          <p>Montant fixe :</p>
+          <input class="type_don" type="radio" id="montant_10" name="montant_fixe" value="10">
+          <label for="montant_10">10$</label>
 
-        <input class="type_don" type="radio" id="montant_100" name="montant_fixe" value="100">
-        <label for="montant_100">100$</label>
+          <input class="type_don" type="radio" id="montant_50" name="montant_fixe" value="50">
+          <label for="montant_50">50$</label>
 
-        <input class="type_don" type="radio" id="montant_200" name="montant_fixe" value="200">
-        <label for="montant_200">200$</label>
+          <input class="type_don" type="radio" id="montant_100" name="montant_fixe" value="100">
+          <label for="montant_100">100$</label>
 
-        <br>
-        <label for="montant_custom">Autre montant :</label>
-        <input class="border rounded p-1"type="number" id="montant_custom" name="montant_libre" placeholder="0"> $
-       </div>
-          <button class="border-2 m-2 pl-3 pr-3">
-            <a>
-              Suivant
-            </a>
-          </button>
+          <input class="type_don" type="radio" id="montant_200" name="montant_fixe" value="200">
+          <label for="montant_200">200$</label>
+
+          <br>
+          <label for="montant_custom">Autre montant :</label>
+          <input class="border rounded p-1" type="number" id="montant_custom" name="montant_libre" placeholder="0"
+            maxlength="10"> $
+              <div class="erreur_numeroCarte">
+                <p class="text-red-700 hidden">Le montant inscrit doit respecter le format XX.</p>
+              </div>
+          
+        </div>
+        <button type="button" class="bouton1 border-2 m-2 pl-3 pr-3 bg-blue-600">Suivant</button>
       </fieldset>
+    </section>
 
-     
 
-      <!-- SECTION 2: COORDONNÉES -->
+
+    <!-- SECTION 2: COORDONNÉES -->
+    <section class="etape2 hidden">
       <fieldset class="border-2">
         <legend class="p-2">Vos coordonnées</legend>
         <div class="m-3">
-        <div>
-          <label for="nom">Nom :</label>
-          <input class="border rounded"type="text" id="nom" name="nom" required>
-        </div>
+          <div>
+            <label for="nom">Nom :</label>
+            <input class="border rounded" type="text" id="nom" name="nom" minlength="2" maxlength="30" >
+            <div class="erreur_nom ">
+              <p class="text-red-700 hidden">Le nom doit avoir entre 2 et 30 caractères</p>
+            </div>
+          </div>
 
-        <div>
-          <label for="prenom">Prénom :</label>
-          <input class="border rounded"type="text" id="prenom" name="prenom" required>
-        </div>
+          <div>
+            <label for="prenom">Prénom :</label>
+            <input class="border rounded" type="text" id="prenom" name="prenom" required>
+            <div class="erreur_prenom ">
+              <p class="text-red-700 hidden">Le prenom doit avoir entre 2 et 30 caractères</p>
+            </div>
+          </div>
 
-        <div>
-          <label for="entreprise">Entreprise (facultatif) :</label>
-          <input class="border rounded"type="text" id="entreprise" name="entreprise">
-        </div>
+          <div>
+            <label for="prenom">Téléphone :</label>
+            <input class="border rounded" type="number" id="telephone" name="telephone" required>
+            <div class="erreur_telephone ">
+              <p class="text-red-700 hidden">Le numéro de téléphone n'est pas valide</p>
+            </div>
+          </div>
 
-        <div>
-          <label for="email">E-mail :</label>
-          <input class="border rounded"type="email" id="email" name="email" required>
-        </div>
+          <div>
+            <label for="entreprise">Entreprise (facultatif) :</label>
+            <input class="border rounded" type="text" id="entreprise" name="entreprise">
+          </div>
 
-        <div>
-          <label for="adresse">Adresse :</label>
-          <input class="border rounded" type="text" id="adresse" name="adresse" required>
+          <div>
+            <label for="email">Couriel:</label>
+            <input class="border rounded" type="email" id="email" name="email" required>
+            <div class="erreur_couriel ">
+              <p class="text-red-700 hidden">Le couriel n'est pas valide</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="adresse">Adresse(ligne1):</label>
+            <input class="border rounded" type="text" id="adresse" name="adresse" required>
+            <div class="erreur_adresse ">
+              <p class="text-red-700 hidden">L'adresse n'est pas valide</p>
+            </div>
+          </div
+            <div>
+            <label for="adresse">Ville:</label>
+            <input class="border rounded" type="text" id="ville" name="ville" required>
+            <div class="erreur_adresse ">
+              <p class="text-red-700 hidden">La ville n'est pas valide</p>
+            </div>
+            </div>
+            
+          </div>
         </div>
-        </div>
+        <button type="button"class="bouton2 border-2 m-2 pl-3 pr-3 bg-green-600">Suivant</button>
       </fieldset>
+    </section>
 
-      <!-- SECTION 3: PAIEMENT -->
-      <fieldset class="border-2">   
+    <!-- SECTION 3: PAIEMENT -->
+    <section class="etape3 hidden">
+      <fieldset class="border-2">
         <legend class="p-2">Mode de paiement</legend>
         <div class="m-3">
-        <p>Type de paiement:</p>
-        <input class="type_don" type="radio" id="carte_credit" name="type_carte" value="credit">
-        <label for="carte_visa">Crédit</label>
+          <p>Type de paiement:</p>
+          <div>
+            <input class="type_don" type="radio" id="carte_credit" name="type_carte" value="credit">
+            <label for="carte_visa">Crédit</label>
+            <input class="type_don" type="radio" id="carte_paypal" name="type_carte" value="paypal">
+            <label for="carte_paypal">PayPal</label>
+            <br>
+          </div>
+          <div>
+            <label for="cc-number">Numéro de carte :</label>
+            <input class="border rounded"type="tel" id="cc-number" name="numero_carte" inputmode="numeric" maxlength="19" required>
+            <div class="erreur_numeroCarte ">
+              <p class="text-red-700 hidden">Le numéro de la carte n'est pas valide</p>
+            </div>
+            <div>
+              <label for="expiration">Expiration :</label>
+              <input class="border rounded w-14"type="text" id="expiration" name="expiration_carte" maxlength="4" required>
+              <div class="erreur_numeroCarte ">
+                <p class="text-red-700 hidden">L'expiration de la carte n'est pas valide</p>
+              </div>
+            </div>
 
-        <input class="type_don" type="radio" id="carte_paypal" name="type_carte" value="paypal">
-        <label for="carte_paypal">PayPal</label>
-        <br><br>
-
-        <label for="cc-number">Numéro de carte :</label>
-        <input type="tel" id="cc-number" name="numero_carte" inputmode="numeric"  maxlength="19" required>
+            <div>
+              <label for="ccv">CCV :</label>
+              <input class="border rounded w-10"type="text" id="ccv" name="ccv_carte" maxlength="3" required>
+              <div class="erreur_numeroCarte ">
+                <p class="text-red-700 hidden">Le code CCV de la carte n'est pas valide</p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <button type="button" class="bouton3 border-2 m-2 pl-3 pr-3 bg-red-600">Suivant</button>
         
-        <div>
-          <label for="expiration">Expiration :</label>
-          <input type="text" id="expiration" name="expiration_carte"  required>
-        </div>
+      </fieldset>
+    </section>
+
+    <!-- SECTION 4: RÉSUMÉ -->
+    <section class="etape4 hidden">
+      <fieldset class="border-2">
+        <legend class="p-2">Résumé du don</legend>
+        <div class="m-3">
+          <div>
+            <h2>Nom  : <span id="resume_nom"></span></h2>
+          </div>
+          <div>
+            <h2>Prénom : <span id="resume_prenom"></span></h2>
+          </div>
+           <div>
+            <h2>Téléphone  : <span id="resume_telephone"></span></h2>
+          </div>
+          <div>
+            <h2>Couriel : <span id="resume_couriel"></span></h2>
+          </div>
+           <div>
+            <h2>Adresse  : <span id="resume_adresse"></span></h2>
+          </div>
+          <div>
+            <h2>Montant du don : <span id="resume_montant"></span></h2>
+          </div>
         </div>
       </fieldset>
+    </section>
 
-      <!-- SECTION 4: RÉSUMÉ -->
-      <fieldset>
-        <legend>Résumé du don</legend>
-        <div>
-          <h2>Nom complet : <span id="resume_nom"></span></h2>
-        </div>
-        <div>
-          <h2>Montant : <span id="resume_montant"></span></h2>
-        </div>
-      </fieldset>
-
-      <button type="submit">Envoyer le don</button>
-    </form>
-  </body>
+    <button class="bg-purple-600 border-2 p-3 rounded-2xl m-3 boutonEnvoie" type="submit">Envoyer le don</button>
+  </form>
+</body>
+ 
 </html>
