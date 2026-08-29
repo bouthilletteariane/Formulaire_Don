@@ -4,3 +4,19 @@ html {
   margin:10px;
 }
 
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size:1.5em;
+}
+h3 {
+  font-size: 1.3em;
+}
+p {
+  font-size: 1em;
+}
+legend{
+  font-size: 1.5em;
+}
+
