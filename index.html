@@ -11,11 +11,8 @@
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
  <h1 class="text-5xl font-bold text-center mb-10 text-gray-800">Je souhaite donner à Centraide</h1>
-  <!-- Conteneur principal pour regrouper le titre et le formulaire au centre -->
   <main class="w-full max-w-xl bg-white p-6 rounded-xl shadow-md">
-    
-   
-
+  
     <form action="merci.html" method="get">
       <!-- SECTION 1: DON -->
       <section class="etape1">
@@ -44,12 +41,14 @@
 
             <br><br>
             <label for="montant_custom">Autre montant :</label>
-            <input class="border rounded p-1" type="number" id="montant_custom" name="montant_libre" placeholder="0" maxlength="10"> $
-            <div class="erreur_numeroCarte">
-              <p class="text-red-700 hidden">Le montant inscrit doit respecter le format XX.</p>
+            <input class="border rounded p-1" type="number" id="montant_custom" name="montant_libre" placeholder="0" pattern="^\d+$" maxlength="10"> $
+            <div class="erreur">
+              <p class="text-red-700 hidden erreur_numeroCarte_format">Le montant inscrit doit respecter le format XX.</p>
+              <p class=" text-red-700 erreur_numeroCarte_caracteres hidden">Les caractères spéciaux ($,.!*) ne sont pas accepter.</p>
             </div>
           </div>
           <button type="button" class="bouton1 border-2 m-2 px-4 py-1 bg-blue-600 text-white rounded">Suivant</button>
+          
         </fieldset>
       </section>
 
@@ -60,7 +59,7 @@
           <div class="m-3 space-y-3">
             <div>
               <label for="nom">Nom :</label>
-              <input class="border rounded w-full p-1" type="text" id="nom" name="nom" minlength="2" maxlength="30">
+              <input class="border rounded w-full p-1" type="text" id="nom" name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$">
               <div class="erreur_nom">
                 <p class="text-red-700 hidden">Le nom doit avoir entre 2 et 30 caractères</p>
               </div>
@@ -68,7 +67,7 @@
 
             <div>
               <label for="prenom">Prénom :</label>
-              <input class="border rounded w-full p-1" type="text" id="prenom" name="prenom" required>
+              <input class="border rounded w-full p-1" type="text" id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$" required>
               <div class="erreur_prenom">
                 <p class="text-red-700 hidden">Le prénom doit avoir entre 2 et 30 caractères</p>
               </div>
@@ -76,28 +75,28 @@
 
             <div>
               <label for="telephone">Téléphone :</label>
-              <input class="border rounded w-full p-1" type="tel" id="telephone" name="telephone" required>
+              <input class="border rounded w-full p-1" type="tel" id="telephone" name="telephone" pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$" required>
               <div class="erreur_telephone">
-                <p class="text-red-700 hidden">Le numéro de téléphone n'est pas valide</p>
+                <p class="text-red-700 hidden">Respecter ce format: 000-000-0000</p>
               </div>
             </div>
 
             <div>
               <label for="entreprise">Entreprise (facultatif) :</label>
-              <input class="border rounded w-full p-1" type="text" id="entreprise" name="entreprise">
+              <input class="border rounded w-full p-1" type="text" id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
             </div>
 
             <div>
               <label for="email">Courriel :</label>
-              <input class="border rounded w-full p-1" type="email" id="email" name="email" required>
+              <input class="border rounded w-full p-1" type="email" id="email" name="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
               <div class="erreur_couriel">
                 <p class="text-red-700 hidden">Le courriel n'est pas valide</p>
               </div>
             </div>
 
             <div>
-              <label for="adresse">Adresse (ligne 1) :</label>
-              <input class="border rounded w-full p-1" type="text" id="adresse" name="adresse" required>
+              <label for="adresse">Adresse(ex:000 rue des Peupliers):</label>
+              <input class="border rounded w-full p-1" type="text" id="adresse" name="adresse" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
               <div class="erreur_adresse">
                 <p class="text-red-700 hidden">L'adresse n'est pas valide</p>
               </div>
@@ -105,12 +104,21 @@
 
             <div>
               <label for="ville">Ville :</label>
-              <input class="border rounded w-full p-1" type="text" id="ville" name="ville" required>
+              <input class="border rounded w-full p-1" type="text" id="ville" name="ville" pattern="^[a-zA-ZÀ-ÿ0-9 '\-]+$" required>
+              <div class="erreur_adresse">
+                <p class="text-red-700 hidden">La ville n'est pas valide</p>
+              </div>
+            </div>
+
+             <div>
+              <label for="ville">Code postal :</label>
+              <input class="border rounded w-full p-1" type="text" id="ville" name="ville" pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
               <div class="erreur_adresse">
                 <p class="text-red-700 hidden">La ville n'est pas valide</p>
               </div>
             </div>
           </div>
+           <button type="button" class="boutonRetour2 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
           <button type="button" class="bouton2 border-2 m-2 px-4 py-1 bg-green-600 text-white rounded">Suivant</button>
         </fieldset>
       </section>
@@ -122,10 +130,12 @@
           <div class="m-3 space-y-3">
             <p class="font-medium">Type de paiement :</p>
             <div>
-              <input class="type_don" type="radio" id="carte_credit" name="type_carte" value="credit">
-              <label for="carte_credit">Crédit</label>
-              <input class="type_don" type="radio" id="carte_paypal" name="type_carte" value="paypal">
-              <label for="carte_paypal">PayPal</label>
+              <input class="type_don" type="radio" id="mastercard" name="type_carte" value="mastercard" pattern="^[5][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$">
+              <label for="carte_credit">MasterCard</label>
+              <input class="type_don" type="radio" id="visa" name="type_carte" value="visa" pattern="^[6][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$">
+              <label for="carte_paypal">Visa</label>
+                <input class="type_don" type="radio" id="americanExpress" name="type_carte" value="americanExpress" pattern="^[13][0-9]{3}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$">
+              <label for="carte_paypal">American Express</label>
             </div>
             <div>
               <label for="cc-number">Numéro de carte :</label>
@@ -151,6 +161,7 @@
               </div>
             </div>
           </div>
+           <button type="button" class="boutonRetour1 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
           <button type="button" class="bouton3 border-2 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
         </fieldset>
       </section>
@@ -158,14 +169,28 @@
       <!-- SECTION 4: RÉSUMÉ -->
       <section class="etape4 hidden">
         <fieldset class="border-2 border-gray-200 rounded-lg p-4">
-          <legend class="px-2 font-semibold">Résumé du don</legend>
+          <legend class="px-2 font-semibold">Résumé des informations du don</legend>
           <div class="m-3 space-y-2">
-            <h2>Nom : <span id="resume_nom" class="font-bold"></span></h2>
-            <h2>Prénom : <span id="resume_prenom" class="font-bold"></span></h2>
+            <h2>Nom du donnateur : <span id="resume_nom" class="font-bold"></span></h2>
+            <h2>Prénom du donnateur : <span id="resume_prenom" class="font-bold"></span></h2>
             <h2>Téléphone : <span id="resume_telephone" class="font-bold"></span></h2>
             <h2>Courriel : <span id="resume_couriel" class="font-bold"></span></h2>
             <h2>Adresse : <span id="resume_adresse" class="font-bold"></span></h2>
+              <div class="py-4">
+                <a href="#" class="modifierDonnateur underline bg-amber-400">Modifier</a>
+              </div>
+            <hr>
+              <h2>Numéro de la carte: <span id="resume_nom" class="font-bold"></span></h2>
+              <h2>Expiration: <span id="resume_nom" class="font-bold"></span></h2>
+              <h2>CCV: <span id="resume_nom" class="font-bold"></span></h2>
+              <div class="py-4">
+                <a href="#" class="modifierCarte underline bg-amber-400">Modifier</a>
+              </div>
+            <hr>
             <h2>Montant du don : <span id="resume_montant" class="font-bold text-green-700"></span></h2>
+             <div class="py-4">
+                <a href="#" class="modifierMontant tanunderline bg-amber-400">Modifier</a>
+              </div>
           </div>
         </fieldset>
       </section>
