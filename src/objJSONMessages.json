@@ -1,0 +1,48 @@
+{
+    "prenom": {
+        "vide": "Vous devez entrer votre prénom.",
+        "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "nom": {
+        "vide": "Vous devez entrer votre nom de famille.",
+        "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "courriel": {
+        "vide": "Vous devez entrer votre adresse courriel.",
+        "pattern": "Assurez-vous d'entrer une adresse courriel valide.",
+        "type": "Assurez-vous d'entrer une adresse courriel."
+    },
+    "autreMontant": {
+        "vide": "Vous devez entrer un montant.",
+        "pattern": "Entrez une montant valide."
+    },
+
+     "telephone": {
+        "vide": "Vous devez entrer un numéro de téléphone.",
+        "pattern": "Entrez une numéro de téléphone sans caractères spéciaux, ni espaces."
+    },
+      "adresse": {
+        "vide": "Vous devez entrer une adresse.",
+        "pattern": "Entrez une adresse valide."
+    }, 
+      "ville": {
+        "vide": "Vous devez entrer une ville.",
+        "pattern": "Entrez une ville valide."
+    },
+      "codePostal": {
+        "vide": "Vous devez entrer un code postal.",
+        "pattern": "Entrez un code postal valide."
+    },
+      "credit": {
+        "vide": "Vous devez entrer une numéro de carte de crédit.",
+        "pattern": "Entrez un numero de carte valide."
+    },
+      "expiration": {
+        "vide": "Vous devez entrer la date d'expiration.",
+        "pattern": "Entrez la bonne date d'expiration."
+    },
+     "ccv": {
+        "vide": "Vous devez entrer le code CCV.",
+        "pattern": "Entrez le code CCV valide."
+    }
+}

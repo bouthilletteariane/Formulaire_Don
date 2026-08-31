@@ -59,12 +59,7 @@
             <label for="montant_custom">Autre montant :</label>
             <input class="border rounded p-1" type="number" id="montant_custom" name="montant_libre" placeholder="0"
               pattern="^\d+$" maxlength="10"> $
-            <div class="erreur">
-              <p class="text-red-700 hidden erreur_numeroCarte_format">Le montant inscrit doit respecter le format XX.
-              </p>
-              <p class=" text-red-700 erreur_numeroCarte_caracteres hidden">Les caractères spéciaux ($,.!*) ne sont pas
-                accepter.</p>
-            </div>
+            
           </div>
           <button type="button" class="bouton1 border-2 m-2 px-4 py-1 bg-blue-600 text-white rounded">Suivant</button>
 
@@ -80,27 +75,21 @@
               <label for="nom">Nom :</label>
               <input class="border rounded w-full p-1" type="text" id="nom" name="nom" minlength="2" maxlength="30"
                 pattern="^[a-zA-ZÀ-ÿ]+$">
-              <div class="erreur_nom">
-                <p class="text-red-700 hidden">Le nom doit avoir entre 2 et 30 caractères</p>
-              </div>
+              
             </div>
 
             <div>
               <label for="prenom">Prénom :</label>
               <input class="border rounded w-full p-1" type="text" id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$"
                 required>
-              <div class="erreur_prenom">
-                <p class="text-red-700 hidden">Le prénom doit avoir entre 2 et 30 caractères</p>
-              </div>
+              
             </div>
 
             <div>
               <label for="telephone">Téléphone :</label>
               <input class="border rounded w-full p-1" type="tel" id="telephone" name="telephone"
                 pattern="^\(?([0-9]{3})\)?[ ]?([0-9]{3})[-]?([0-9]{4})$" required>
-              <div class="erreur_telephone">
-                <p class="text-red-700 hidden">Respecter ce format: 000-000-0000</p>
-              </div>
+              
             </div>
 
             <div>
@@ -113,36 +102,27 @@
               <label for="email">Courriel :</label>
               <input class="border rounded w-full p-1" type="email" id="email" name="email"
                 pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
-              <div class="erreur_couriel">
-                <p class="text-red-700 hidden">Le courriel n'est pas valide</p>
-              </div>
+              
             </div>
 
             <div>
               <label for="adresse">Adresse(ex:000 rue des Peupliers):</label>
               <input class="border rounded w-full p-1" type="text" id="adresse" name="adresse"
                 pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
-              <div class="erreur_adresse">
-                <p class="text-red-700 hidden">L'adresse n'est pas valide</p>
-              </div>
+             
             </div>
 
             <div>
               <label for="ville">Ville :</label>
               <input class="border rounded w-full p-1" type="text" id="ville" name="ville"
                 pattern="^[a-zA-ZÀ-ÿ0-9 '\-]+$" required>
-              <div class="erreur_adresse">
-                <p class="text-red-700 hidden">La ville n'est pas valide</p>
-              </div>
+              
             </div>
 
             <div>
               <label for="ville">Code postal :</label>
               <input class="border rounded w-full p-1" type="text" id="ville" name="ville"
                 pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
-              <div class="erreur_adresse">
-                <p class="text-red-700 hidden">La ville n'est pas valide</p>
-              </div>
             </div>
           </div>
           <button type="button"
@@ -187,26 +167,20 @@
               <label for="cc-number">Numéro de carte :</label>
               <input class="border rounded w-full p-1" type="tel" id="cc-number" name="numero_carte" inputmode="numeric"
                 maxlength="19" required>
-              <div class="erreur_numeroCarte">
-                <p class="text-red-700 hidden">Le numéro de la carte n'est pas valide</p>
-              </div>
+              
             </div>
 
             <div>
               <label for="expiration">Expiration :</label>
               <input class="border rounded w-20 p-1" type="text" id="expiration" name="expiration_carte" maxlength="4"
                 placeholder="MM/YY" required>
-              <div class="erreur_numeroCarte">
-                <p class="text-red-700 hidden">L'expiration de la carte n'est pas valide</p>
-              </div>
+             
             </div>
 
             <div>
               <label for="ccv">CCV :</label>
               <input class="border rounded w-16 p-1" type="text" id="ccv" name="ccv_carte" maxlength="3" required>
-              <div class="erreur_numeroCarte">
-                <p class="text-red-700 hidden">Le code CCV de la carte n'est pas valide</p>
-              </div>
+             
             </div>
           </div>
           <button type="button"
