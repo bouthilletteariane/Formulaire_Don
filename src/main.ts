@@ -1,6 +1,6 @@
 import './style.css';
 //Déclaration navigation étapes
-const bouton1 = document.querySelector('.bouton1');
+const bouton1= document.querySelector('.bouton1');
 const bouton2 = document.querySelector('.bouton2');
 const bouton3 = document.querySelector('.bouton3');
 const etape1 = document.querySelector('.etape1');
