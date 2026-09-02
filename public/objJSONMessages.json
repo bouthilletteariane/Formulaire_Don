@@ -7,19 +7,14 @@
         "vide": "Vous devez entrer votre nom de famille.",
         "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
     },
-    "courriel": {
+    "email": {
         "vide": "Vous devez entrer votre adresse courriel.",
         "pattern": "Assurez-vous d'entrer une adresse courriel valide.",
         "type": "Assurez-vous d'entrer une adresse courriel."
     },
-    "autreMontant": {
-        "vide": "Vous devez entrer un montant.",
-        "pattern": "Entrez une montant valide."
-    },
-
+    
      "telephone": {
-        "vide": "Vous devez entrer un numéro de téléphone.",
-        "pattern": "Entrez une numéro de téléphone sans caractères spéciaux, ni espaces."
+        "vide": "Vous devez entrer un numéro de téléphone."
     },
       "adresse": {
         "vide": "Vous devez entrer une adresse.",
@@ -29,11 +24,11 @@
         "vide": "Vous devez entrer une ville.",
         "pattern": "Entrez une ville valide."
     },
-      "codePostal": {
+      "codepostal": {
         "vide": "Vous devez entrer un code postal.",
         "pattern": "Entrez un code postal valide."
     },
-      "credit": {
+      "cc-number": {
         "vide": "Vous devez entrer une numéro de carte de crédit.",
         "pattern": "Entrez un numero de carte valide."
     },
