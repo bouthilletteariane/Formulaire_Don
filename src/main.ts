@@ -10,6 +10,13 @@ const etape2 = document.querySelector('.etape2');
 const etape3 = document.querySelector('.etape3');
 const etape4 = document.querySelector('.etape4');
 
+//Déclaration pour step left
+const etapesNav = [
+  document.querySelector('.etape-nav-1'),
+  document.querySelector('.etape-nav-2'),
+  document.querySelector('.etape-nav-3'),
+  document.querySelector('.etape-nav-4')
+];
 let etapeRendu = 1;
 
 //Déclaration navigation "retour";
@@ -28,19 +35,47 @@ formulaire?.setAttribute('novalidate', '');
 function initialisation() {
   boutonEnvoie?.classList.add("hidden");
   etapeRendu=1
+  mettreAJourSteppers(etapeRendu);
 }
 
 initialisation();
+//Fonction navigation des étapes stpes-left: 
+
+function mettreAJourSteppers(etapeActive) {
+  let index = 1;
+
+  for (const li of etapesNav) {
+    const lien = li.querySelector('a');
+
+    if (index === etapeActive) {
+      // Étape active : bordure rouge
+      li.setAttribute('aria-current', 'step');
+      lien.className = 'block pb-2 border-b-8 border-red-800 font-semibold text-red-800';
+    } else {
+      // Étape inactive : bordure grise
+      li.removeAttribute('aria-current');
+      lien.className = 'block pb-2 border-b-2 border-gray-300 text-gray-500';
+    }
+
+    index = index + 1;
+  }
+}
+
+
+
 
 //Fonction pour la navigation entre les étapes
 function navigationEtapes() {
   //Navigation etape1 -> etape2
   bouton1?.addEventListener("click", () => {
-
       etape1?.classList.add("hidden");
     bouton1?.classList.add("hidden");
     etape2?.classList.remove("hidden");
     bouton2?.classList.remove("hidden");
+
+    etapeRendu=2;
+    mettreAJourSteppers(etapeRendu);
+
   
       }
   );
@@ -53,6 +88,8 @@ function navigationEtapes() {
     bouton2?.classList.add("hidden");
     etape3?.classList.remove("hidden");
     bouton3?.classList.remove("hidden");
+    etapeRendu=3;
+    mettreAJourSteppers(etapeRendu);
   
       }
   });
@@ -62,6 +99,8 @@ function navigationEtapes() {
     bouton3?.classList.add("hidden");
     etape4?.classList.remove("hidden");
     boutonEnvoie?.classList.remove("hidden");
+    etapeRendu=4;
+    mettreAJourSteppers(etapeRendu);
 
 
   });
@@ -70,22 +109,28 @@ function navigationEtapes() {
 
 navigationEtapes();
 
-//Fonction de navigation "retour" 
+// Fonction de navigation "retour" 
 function navigationRetour() {
-  //Navigation étape 2 -> étape 1
+  // Navigation étape 2 -> étape 1
   boutonRetour1?.addEventListener("click", () => {
-      etape2?.classList.add("hidden");
-      bouton2?.classList.add("hidden");
-      etape1?.classList.remove("hidden");
-      bouton1?.classList.remove("hidden");
+    etape2?.classList.add("hidden");
+    bouton2?.classList.add("hidden");
+    etape1?.classList.remove("hidden");
+    bouton1?.classList.remove("hidden");
 
-  })
-  //Navigation étape 3 -> étape 2 
-  boutonRetour2?.addEventListener("click",(event) => {
-      etape3?.classList.add("hidden");
-      bouton3?.classList.add("hidden");
-      etape2?.classList.remove("hidden");
-      bouton2?.classList.remove("hidden");
+    etapeRendu = 1;
+    mettreAJourSteppers(etapeRendu);
+  });
+
+  // Navigation étape 3 -> étape 2 
+  boutonRetour2?.addEventListener("click", (event) => {
+    etape3?.classList.add("hidden");
+    bouton3?.classList.add("hidden");
+    etape2?.classList.remove("hidden");
+    bouton2?.classList.remove("hidden");
+
+    etapeRendu = 2;
+    mettreAJourSteppers(etapeRendu);
   });
 }
 navigationRetour();
