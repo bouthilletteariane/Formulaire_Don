@@ -14,7 +14,8 @@
     },
     
      "telephone": {
-        "vide": "Vous devez entrer un numéro de téléphone."
+        "vide": "Vous devez entrer un numéro de téléphone.",
+        "pattern":"Entrez un numéro de téléphone valide."
     },
       "adresse": {
         "vide": "Vous devez entrer une adresse.",
@@ -36,8 +37,8 @@
         "vide": "Vous devez entrer la date d'expiration.",
         "pattern": "Entrez la bonne date d'expiration."
     },
-     "ccv": {
+     "cvc": {
         "vide": "Vous devez entrer le code CCV.",
-        "pattern": "Entrez le code CCV valide."
+        "pattern": "Entrez le code CVC valide."
     }
 }

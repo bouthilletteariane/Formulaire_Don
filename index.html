@@ -7,42 +7,39 @@
   <title>Don Centraide</title>
 </head>
 
-
 <body class=" bg-gray-50 flex flex-col items-center justify-center">
-  <!-- Navigation Steps-left -->
-<nav aria-label="Étapes du formulaire de don" class="w-full ">
-  <ol class="flex flex-row items-center justify-between gap-5 list-none p-0 m-0">
-    <!-- Étape Actuelle -->
-    <li aria-current="step" class="flex-1 text-center etape-nav-1">
-      <a href="#" class="block pb-2 border-b-8 border-red-800 font-semibold text-red-800">
-        <span class="sr-only">Étape 1 </span>
-        Type de don
-      </a>
-    </li>
-    <!-- Étape Suivante 1 -->
-    <li class="flex-1 text-center etape-nav-2">
-      <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
-        <span class="sr-only">Étape 2 </span>
-        Informations du donateur
-      </a>
-    </li>
-    <!-- Étape Suivante 2 -->
-    <li class="flex-1 text-center etape-nav-3">
-      <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
-        <span class="sr-only">Étape 3 </span>
-        Mode de paiement
-      </a>
-    </li>
-    <!-- Étape Suivante 3 -->
-    <li class="flex-1 text-center etape-nav-4">
-      <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
-        <span class="sr-only">Étape 4 </span>
-        Envoi du don
-      </a>
-    </li>
-    
-  </ol>
-</nav>
+  <nav aria-label="Étapes du formulaire de don" class="w-full ">
+    <ol class="flex flex-row items-center justify-between gap-5 list-none p-0 m-0">
+      <li aria-current="step" class="flex-1 text-center etape-nav-1">
+        <a href="#" class="block pb-2 border-b-8 border-red-800 font-semibold text-red-800">
+          <span class="sr-only">Étape 1 </span>
+          Type de don
+        </a>
+      </li>
+      <!-- Étape Suivante 1 -->
+      <li class="flex-1 text-center etape-nav-2">
+        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
+          <span class="sr-only">Étape 2 </span>
+          Informations du donateur
+        </a>
+      </li>
+      <!-- Étape Suivante 2 -->
+      <li class="flex-1 text-center etape-nav-3">
+        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
+          <span class="sr-only">Étape 3 </span>
+          Mode de paiement
+        </a>
+      </li>
+      <!-- Étape Suivante 3 -->
+      <li class="flex-1 text-center etape-nav-4">
+        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-gray-500">
+          <span class="sr-only">Étape 4 </span>
+          Envoi du don
+        </a>
+      </li>
+
+    </ol>
+  </nav>
 
   <h1 class="font-bold text-center p-10 text-gray-800">Je souhaite donner à Centraide Québec</h1>
 
@@ -63,34 +60,38 @@
           <div class="m-2">
             <p class="text-red-600 hidden">Choisissez votre option :</p>
             <div class="flex w-full max-w-md border border-black">
-              <input type="radio" id="frequence_unique" name="frequence_don" value="unique" class="peer/unique sr-only" checked>
+              <input type="radio" id="frequence_unique" name="frequence_don" value="unique" class="peer/unique sr-only"
+                checked>
               <label for="frequence_unique"
                 class="flex-1 py-4 text-center cursor-pointer select-none bg-white text-black transition-colors peer-checked/unique:bg-black peer-checked/unique:text-white">
                 Versement unique
               </label>
-              <input type="radio" id="frequence_periodique" name="frequence_don" value="periodique" class="peer/periodique sr-only">
+              <input type="radio" id="frequence_periodique" name="frequence_don" value="periodique"
+                class="peer/periodique sr-only">
               <label for="frequence_periodique"
                 class="flex-1 py-4 text-center cursor-pointer select-none bg-white text-black transition-colors peer-checked/periodique:bg-black peer-checked/periodique:text-white">
                 Versement périodique
               </label>
             </div>
+
             <p class="mt-3 font-medium">Montant fixe :</p>
             <input class="type_don" type="radio" id="montant_10" name="montant_fixe" value="10">
             <label for="montant_10">10$</label>
 
-            <input class="type_don" type="radio" id="montant_50" name="montant_fixe" value="50">
-            <label for="montant_50">50$</label>
+            <input class="type_don" type="radio" id="montant_50" name="montant_fixe" value="25">
+            <label for="montant_50">25$</label>
 
-            <input class="type_don" type="radio" id="montant_100" name="montant_fixe" value="100">
-            <label for="montant_100">100$</label>
+            <input class="type_don" type="radio" id="montant_100" name="montant_fixe" value="75">
+            <label for="montant_100">75$</label>
 
-            <input class="type_don" type="radio" id="montant_200" name="montant_fixe" value="200">
-            <label for="montant_200">200$</label>
+            <input class="type_don" type="radio" id="montant_200" name="montant_fixe" value="125">
+            <label for="montant_200">125$</label>
+      
 
             <br><br>
-            <label for="montant">Autre montant :</label>
-            <input class="border rounded p-1" 
-            aria-describedby="erreur-montant"  aria-invalid="true" type="number" id="montant" name="montant_libre" pattern="^\d+$" max=9999999999> $
+            <label for="montant">Montant :</label>
+            <input class="border rounded p-1" aria-describedby="erreur-montant" aria-invalid="true" type="text"
+              id="montant" name="montant" pattern="^\d+$" max=9999999999> $
             <div id="erreur-montant" class="text-red-600 text-sm mt-1"></div>
           </div>
           <button type="button" class="bouton1 border-2 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
@@ -104,65 +105,71 @@
           <div class="m-3 space-y-3">
             <div>
               <label for="nom">Nom :</label>
-              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-nom"
-               type="text" id="nom" name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name" required>
+              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-nom" type="text"
+                id="nom" name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name"
+                required>
               <div id="erreur-nom" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="prenom">Prénom :</label>
-              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-prenom"
-              type="text" id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$"  autocomplete="given-name" required>
+              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-prenom" type="text"
+                id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="given-name" required>
               <div id="erreur-prenom" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="telephone">Téléphone :</label>
-              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-telephone"
-              type="numer" id="telephone" name="telephone" min="1" autocomplete="tel" required>
+              <input class="border rounded w-full p-1" aria-describedby="erreur-telephone" type="tel" id="telephone"
+                name="telephone" pattern="[0-9]{10,15}" minlength="10" maxlength="15" autocomplete="tel" required>
               <div id="erreur-telephone" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="entreprise">Entreprise (facultatif) :</label>
               <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-entreprise"
-              type="text" id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
+                type="text" id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
               <div id="erreur-entreprise" class="text-red-600 text-sm mt-1"></div>
             </div>
 
+            <!-- id="email" changé pour id="courrier-electronique" -->
             <div>
               <label for="email">Courriel :</label>
-              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-email"
-              type="email" id="email" name="email" autocomplete="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
+              <input class="border rounded w-full p-1" aria-invalid="true"
+                aria-describedby="erreur-email" type="email" id="email" name="email"
+                autocomplete="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
               <div id="erreur-email" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="adresse">Adresse (ex: 000 rue des Peupliers) :</label>
-              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-adresse"
-               type="text" id="adresse" autocomplete="street-address" name="adresse"pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
+              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-adresse" type="text"
+                id="adresse" autocomplete="street-address" name="adresse" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
               <div id="erreur-adresse" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="ville">Ville :</label>
-              <input class="border rounded w-full p-1"aria-invalid="true" aria-describedby="erreur-ville"
-               type="text" id="ville" name="ville" pattern="^[a-zA-ZÀ-ÿ0-9 '\-]+$" required>
+              <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-ville" type="text"
+                id="ville" name="ville" pattern="^[a-zA-ZÀ-ÿ'\-]+$" required>
               <div id="erreur-ville" class="text-red-600 text-sm mt-1"></div>
             </div>
 
+            <!-- id="codepostal" changé pour id="code-postal" -->
             <div>
-              <label for="codepostal">Code postal :</label>
+              <label for="code-postal">Code postal :</label>
               <input class="border rounded w-full p-1" aria-invalid="true" aria-describedby="erreur-codepostal"
-              type="text" id="codepostal" autocomplete="postal-code" name="codepostal"pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
+                type="text" id="code-postal" autocomplete="postal-code" name="code-postal"
+                pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
               <div id="erreur-codepostal" class="text-red-600 text-sm mt-1"></div>
             </div>
           </div>
-          <button type="button" class="boutonRetour1 border-blue-600 border-2 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
-          <button type="button" class="bouton2 border-red-600 border-2 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
+          <button type="button"
+            class="boutonRetour1 border-blue-600 border-2 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
+          <button type="button"
+            class="bouton2 border-red-600 border-2 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
         </fieldset>
       </section>
-
       <!-- SECTION 3: PAIEMENT -->
       <section class="etape3 hidden">
         <fieldset class="border-2 border-gray-200 rounded-lg p-4">
@@ -170,7 +177,8 @@
           <div class="m-3 space-y-3">
             <p class="font-medium">Type de paiement :</p>
             <div class="flex w-full max-w-xl border border-black divide-x divide-black">
-              <input type="radio" id="mastercard" name="type_carte" value="mastercard" class="peer/mastercard sr-only" checked>
+              <input type="radio" id="mastercard" name="type_carte" value="mastercard" class="peer/mastercard sr-only"
+                checked>
               <label for="mastercard"
                 class="flex-1 py-4 px-2 text-center cursor-pointer select-none bg-white text-black transition-colors peer-checked/mastercard:bg-black peer-checked/mastercard:text-white">
                 MasterCard
@@ -182,7 +190,8 @@
                 Visa
               </label>
 
-              <input type="radio" id="americanExpress" name="type_carte" value="americanExpress" class="peer/amex sr-only">
+              <input type="radio" id="americanExpress" name="type_carte" value="americanExpress"
+                class="peer/amex sr-only">
               <label for="americanExpress"
                 class="flex-1 py-4 px-2 text-center cursor-pointer select-none bg-white text-black transition-colors peer-checked/amex:bg-black peer-checked/amex:text-white">
                 American Express
@@ -191,24 +200,30 @@
 
             <div>
               <label for="cc-number">Numéro de carte :</label>
-              <input class="border rounded w-full p-1" type="text" id="cc-number" name="numero_carte" autocomplete="cc-number" inputmode="numeric" maxlength="19" required>
+              <input class="border rounded w-full p-1" type="text" id="cc-number" name="numero_carte"
+                autocomplete="cc-number" inputmode="numeric" maxlength="19"
+                pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$" required>
               <div id="erreur-cc-number" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="expiration">Expiration :</label>
-              <input class="border rounded w-20 p-1" type="text" id="expiration" autocomplete="cc-exp" name="expiration_carte" maxlength="4" placeholder="MM/YY" required>
+              <input class="border rounded w-20 p-1" type="text" id="expiration" autocomplete="cc-exp"
+                name="expiration" maxlength="4" placeholder="MM/YY" inputmode="numeric" required>
               <div id="erreur-expiration" class="text-red-600 text-sm mt-1"></div>
             </div>
 
             <div>
               <label for="ccv">CVC :</label>
-              <input class="border rounded w-16 p-1" type="text" id="cvc" name="cvc_carte" autocomplete="cc-csc" maxlength="3" required>
-              <div id="erreur-ccv" class="text-red-600 text-sm mt-1"></div>
+              <input class="border rounded w-16 p-1" type="text" id="cvc" name="cvc_carte" autocomplete="cc-csc"
+                maxlength="3" required>
+              <div id="erreur-cvc" class="text-red-600 text-sm mt-1"></div>
             </div>
           </div>
-          <button type="button" class="boutonRetour2 border-blue-600 border-2 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
-          <button type="button" class="bouton3 border-2 border-red-600 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
+          <button type="button"
+            class="boutonRetour2 border-blue-600 border-2 m-2 px-4 py-1 bg-white text-blue-600 rounded">Retour</button>
+          <button type="button"
+            class="bouton3 border-2 border-red-600 m-2 px-4 py-1 bg-red-600 text-white rounded">Suivant</button>
         </fieldset>
       </section>
 
@@ -223,33 +238,47 @@
             <h3>Courriel : <span id="resume_couriel" class="font-bold"></span></h3>
             <h3>Adresse : <span id="resume_adresse" class="font-bold"></span></h3>
             <div class="py-4">
-              <a href="#" class="modifierDonnateur underline bg-amber-400">Modifier</a>
+              <a href="#"
+                class="modifierDonnateur inline-flex items-center gap-3 text-white px-5 py-3 rounded-2xl bg-red-600 no-underline">
+                <span>Modifier</span>
+                <img class="w-10 h-10" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+              </a>
+
             </div>
             <hr>
             <h3>Numéro de la carte : <span id="resume_carte" class="font-bold"></span></h3>
             <h3>Expiration : <span id="resume_expiration" class="font-bold"></span></h3>
             <h3>CCV : <span id="resume_ccv" class="font-bold"></span></h3>
             <div class="py-4">
-              <a href="#" class="modifierCarte underline bg-amber-400">Modifier</a>
+              <a href="#"
+                class="modifierCarte inline-flex items-center gap-3 text-white px-5 py-3 rounded-2xl bg-red-600 no-underline">
+                <span>Modifier</span>
+                <img class="w-10 h-10" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+              </a>
+
             </div>
             <hr>
             <h3>Montant du don : <span id="resume_montant" class="font-bold text-green-700"></span></h3>
             <div class="py-4">
-              <a href="#" class="modifierMontant underline bg-amber-400">Modifier</a>
+              <a href="#"
+                class="modifierMontant inline-flex items-center gap-3 text-white px-5 py-3 rounded-2xl bg-red-600 no-underline">
+                <span>Modifier</span>
+                <img class="w-10 h-10" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+              </a>
+
             </div>
           </div>
         </fieldset>
       </section>
 
       <div class="flex justify-center mt-4">
-        <button class="bg-red-600 hover:bg-red-700 text-white font-bold p-3 rounded-2xl boutonEnvoie" type="submit">Envoyer le don</button>
+        <button class="bg-red-600 hover:bg-red-700 text-white font-bold p-3 rounded-2xl boutonEnvoie"
+          type="submit">Envoyer le don</button>
       </div>
     </form>
   </main>
-
 </body>
-
 <script type="module" src="/src/main.ts"></script>
-   <script type="module" src="/src/validation-erreurs.ts"></script>
+
 
 </html>
