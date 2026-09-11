@@ -38,7 +38,7 @@
         "pattern": "Entrez la bonne date d'expiration."
     },
      "cvc": {
-        "vide": "Vous devez entrer le code CCV.",
+        "vide": "Vous devez entrer le code CVC.",
         "pattern": "Entrez le code CVC valide."
     }
 }

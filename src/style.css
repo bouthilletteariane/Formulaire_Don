@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/**/
+
 html {
   margin:10px;
 }
@@ -19,4 +21,6 @@ p {
 legend{
   font-size: 1.5em;
 }
-
+label{
+  font-size: 16px;
+}
