@@ -65,13 +65,15 @@
               <input type="radio" id="frequence_unique" name="frequence_don" value="unique" class="peer/unique sr-only"
                 checked>
               <label for="frequence_unique"
-                class="flex-1 py-3 text-center  cursor-pointer select-none bg-white text-black 16px] font-medium transition-colors peer-checked/unique:bg-black peer-checked/unique:text-white">
+                class="flex-1 py-3 text-center  cursor-pointer select-none bg-white text-black 16px] font-medium 
+                transition-colors peer-checked/unique:bg-black peer-checked/unique:text-white">
                 Versement unique
               </label>
               <input type="radio" id="frequence_periodique" name="frequence_don" value="periodique"
                 class="peer/periodique sr-only rounded-b-lg">
               <label for="frequence_periodique"
-                class="flex-1 py-3 text-center rounded-b-lg cursor-pointer select-none bg-white text-black 16px] font-medium transition-colors peer-checked/periodique:bg-black peer-checked/periodique:text-white">
+                class="flex-1 py-3 text-center rounded-b-lg cursor-pointer select-none bg-white text-black 16px] 
+                font-medium transition-colors peer-checked/periodique:bg-black peer-checked/periodique:text-white">
                 Versement mensuel
               </label>
             </div>
@@ -82,7 +84,8 @@
               <div class="flex-1">
                 <input class="type_don sr-only peer" type="radio" id="montant_10" name="montant_fixe" value="10">
                 <label for="montant_10"
-                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
+                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out 
+                  hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
                   10$
                 </label>
               </div>
@@ -90,7 +93,8 @@
               <div class="flex-1">
                 <input class="type_don sr-only peer" type="radio" id="montant_25" name="montant_fixe" value="25">
                 <label for="montant_25"
-                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
+                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out
+                   hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
                   25$
                 </label>
               </div>
@@ -98,7 +102,8 @@
               <div class="flex-1">
                 <input class="type_don sr-only peer" type="radio" id="montant_75" name="montant_fixe" value="75">
                 <label for="montant_75"
-                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
+                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out
+                   hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
                   75$
                 </label>
               </div>
@@ -106,7 +111,8 @@
               <div class="flex-1">
                 <input class="type_don sr-only peer" type="radio" id="montant_125" name="montant_fixe" value="125">
                 <label for="montant_125"
-                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
+                  class="block border text-center py-2 px-3 rounded cursor-pointer transition duration-200 ease-in-out 
+                  hover:-translate-y-1 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-black">
                   125$
                 </label>
               </div>
@@ -128,7 +134,8 @@
               <!-- Section Bouton -->
               <div>
                 <button type="button"
-                  class="bouton1 w-full sm:w-auto  px-26 p-3 border-red-600 border-2 py-2 cursor-pointer bg-red-600 transition delay-10 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100   text-white font-medium rounded hover:bg-red-800 16px]">
+                  class="bouton1 w-full sm:w-auto  px-26 p-3 border-red-600 border-2 py-2 cursor-pointer bg-red-600 
+                  transition delay-10 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100   text-white font-medium rounded hover:bg-red-800 16px]">
                   Suivant
                 </button>
               </div>
@@ -139,75 +146,78 @@
 
       <!-- SECTION 2: COORDONNÉES -->
       <section class="etape2 hidden">
-        <fieldset class="rounded-lg pb-4 pt-4">
-          <legend class="px-2  text-[18px] text-center font-medium">Vos coordonnées</legend>
-          <div class="m-1 space-y-3">
+        <!-- Le fieldset / conteneur blanc prend toute la largeur -->
+        <fieldset class="w-full bg-white rounded-lg p-6 ">
+          <legend class="px-2 text-[18px] text-center font-medium mb-4">Vos coordonnées</legend>
+      
+          <!-- Conteneur interne : centré au milieu de la boîte blanche (max 400px) -->
+          <div class="max-w-100 mx-auto space-y-4">
+      
             <div>
               <label for="nom" class="block font-medium">Nom :</label>
-              <input class="border rounded w-full p-2 " aria-invalid="true" aria-describedby="erreur-nom" type="text"
-                id="nom" name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name"
-                required>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-nom" type="text" id="nom"
+                name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name" required>
               <div id="erreur-nom" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="prenom" class="block  font-medium">Prénom :</label>
-              <input class="border rounded w-full p-2 " aria-invalid="true" aria-describedby="erreur-prenom" type="text"
+              <label for="prenom" class="block font-medium">Prénom :</label>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-prenom" type="text"
                 id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="given-name" required>
               <div id="erreur-prenom" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="telephone" class="block  font-medium">Téléphone :</label>
-              <input class="border rounded w-full p-2 " aria-describedby="erreur-telephone" type="tel" id="telephone"
+              <label for="telephone" class="block font-medium">Téléphone :</label>
+              <input class="border rounded w-full p-2" aria-describedby="erreur-telephone" type="tel" id="telephone"
                 name="telephone" pattern="[0-9]{10,15}" minlength="10" maxlength="15" autocomplete="tel" required>
               <div id="erreur-telephone" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="entreprise" class="block 16px] font-medium">Entreprise (facultatif) :</label>
-              <input class="border rounded w-full p-2 16px]" aria-invalid="true" aria-describedby="erreur-entreprise"
-                type="text" id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
+              <label for="entreprise" class="block font-medium">Entreprise (facultatif) :</label>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-entreprise" type="text"
+                id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
               <div id="erreur-entreprise" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="email" class="block  font-medium">Courriel :</label>
-              <input class="border rounded w-full p-2 16px]" aria-invalid="true" aria-describedby="erreur-email"
-                type="email" id="email" name="email" autocomplete="email"
-                pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
+              <label for="email" class="block font-medium">Courriel :</label>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-email" type="email"
+                id="email" name="email" autocomplete="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
               <div id="erreur-email" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
               <label for="adresse" class="block font-medium">Adresse (ex: 000 rue des Peupliers) :</label>
-              <input class="border rounded w-full p-2 16px]" aria-invalid="true" aria-describedby="erreur-adresse"
-                type="text" id="adresse" autocomplete="street-address" name="adresse"
-                pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-adresse" type="text"
+                id="adresse" autocomplete="street-address" name="adresse" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
               <div id="erreur-adresse" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="ville" class="block 16px] font-medium">Ville :</label>
-              <input class="border rounded w-full p-2 16px]" aria-invalid="true" aria-describedby="erreur-ville"
+              <label for="ville" class="block font-medium">Ville :</label>
+              <input class="border rounded w-full max-w-50 p-2" aria-invalid="true" aria-describedby="erreur-ville"
                 type="text" id="ville" name="ville" pattern="^[a-zA-ZÀ-ÿ'\-]+$" required>
               <div id="erreur-ville" class="text-red-600 text-sm mt-1"></div>
             </div>
-
+      
             <div>
-              <label for="code-postal" class="block 16px] font-medium">Code postal :</label>
-              <input class="border rounded w-full p-2 16px]" aria-invalid="true" aria-describedby="erreur-codepostal"
+              <label for="code-postal" class="block font-medium">Code postal :</label>
+              <input class="border rounded w-full max-w-30 p-2" aria-invalid="true" aria-describedby="erreur-codepostal"
                 type="text" id="code-postal" autocomplete="postal-code" name="code-postal"
                 pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
               <div id="erreur-codepostal" class="text-red-600 text-sm mt-1"></div>
             </div>
-          </div>
-
-          <div class="flex gap-3 mt-6">
-            <button type="button"
-              class="boutonRetour1 flex-1 border-blue-600 border-2 py-2 bg-white text-blue-600 font-medium rounded 16px]">Retour</button>
-            <button type="button"
-              class="bouton2 flex-1 border-red-600 border-2 py-2 bg-red-600 transition delay-10 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100 cursor-pointer  16px] text-white font-medium rounded hover:bg-red-800 16px]">Suivant</button>
+      
+        
+            <div class="flex justify-between gap-4 pt-4">
+              <button type="button"
+                class="boutonRetour1 flex-1 border-blue-600 border-2 py-2 bg-white text-blue-600 font-medium rounded hover:bg-blue-50">Retour</button>
+              <button type="button" class="bouton2 flex-1 border-red-600 border-2 py-2 bg-red-600 transition duration-200 ease-in-out 
+                hover:-translate-y-0.5 cursor-pointer text-white font-medium rounded hover:bg-red-800">Suivant</button>
+            </div>
+      
           </div>
         </fieldset>
       </section>
@@ -230,7 +240,8 @@
                 <input type="radio" id="mastercard" name="type_carte" value="mastercard" class="peer/mastercard sr-only"
                   checked>
                 <label for="mastercard"
-                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/mastercard:bg-black peer-checked/mastercard:text-white">
+                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none
+                   bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/mastercard:bg-black peer-checked/mastercard:text-white">
                   MasterCard
                 </label>
               </div>
@@ -238,7 +249,8 @@
               <div>
                 <input type="radio" id="visa" name="type_carte" value="visa" class="peer/visa sr-only">
                 <label for="visa"
-                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/visa:bg-black peer-checked/visa:text-white">
+                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none
+                   bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/visa:bg-black peer-checked/visa:text-white">
                   Visa
                 </label>
               </div>
@@ -247,7 +259,8 @@
                 <input type="radio" id="americanExpress" name="type_carte" value="americanExpress"
                   class="peer/amex sr-only">
                 <label for="americanExpress"
-                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/amex:bg-black peer-checked/amex:text-white">
+                  class="flex items-center justify-center h-12 p-1 border rounded text-center cursor-pointer select-none
+                   bg-white text-black text-xs sm:text-sm font-medium transition-colors peer-checked/amex:bg-black peer-checked/amex:text-white">
                   American Express
                 </label>
               </div>
@@ -280,7 +293,8 @@
             <button type="button"
               class="boutonRetour2 flex-1 border-blue-600 border-2 py-2 bg-white text-blue-600 font-medium rounded 16px]">Retour</button>
             <button type="button"
-              class="bouton3 flex-1 border-red-600 border-2 py-2 bg-red-600 transition delay-10 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100   16px] text-white font-medium rounded hover:bg-red-800 16px]">Suivant</button>
+              class="bouton3 flex-1 border-red-600 border-2 py-2 bg-red-600 transition delay-10 duration-200 ease-in-out 
+              hover:-translate-y-1 hover:scale-100   16px] text-white font-medium rounded hover:bg-red-800 16px]">Suivant</button>
           </div>
         </fieldset>
       </section>
