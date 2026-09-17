@@ -61,7 +61,7 @@ function mettreAJourStep(etapeActive: number): void {
       if (lien) lien.className = 'block pb-2 border-b-8 border-red-800 font-semibold text-red-800';
     } else {
       li.removeAttribute('aria-current');
-      if (lien) lien.className = 'block pb-2 border-b-2 border-gray-300 text-gray-500';
+      if (lien) lien.className = 'block pb-2 border-b-2 border-black-300 text-black';
     }
   });
 }
