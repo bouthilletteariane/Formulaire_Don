@@ -33,12 +33,16 @@
         "vide": "Vous devez entrer une numéro de carte de crédit.",
         "pattern": "Entrez un numero de carte valide."
     },
-      "expiration": {
-        "vide": "Vous devez entrer la date d'expiration.",
-        "pattern": "Entrez la bonne date d'expiration."
-    },
+      
+  "expireMM": {
+    "vide": "Veuillez sélectionner le mois d'expiration."
+  },
+  "expireAA": {
+    "vide": "Veuillez sélectionner l'année d'expiration."
+  },
+
+    
      "cvc": {
         "vide": "Vous devez entrer le code CVC.",
         "pattern": "Entrez le code CVC valide."
-    }
-}
+    }}

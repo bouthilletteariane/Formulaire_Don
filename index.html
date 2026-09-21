@@ -10,7 +10,7 @@
 <body class=" flex flex-col items-center justify-center min-h-screen py-6 px-4  bg-linear-to-b from-red-50 to-red-100 ">
   <header class="flex flex-col items-center mb-4 text-center">
     <img src="/src/assets/logo.svg" alt="Centraide Logo" class="w-16 h-auto mb-2" />
-    <span class="16px] font-medium text-gray-700">Campagne 2026</span>
+    <span class="[16px] font-medium text-gray-700">Campagne 2026</span>
   </header>
 
 
@@ -64,15 +64,13 @@
             <div class="grid grid-cols-1  w-full border border-black rounded">
               <input type="radio" id="frequence_unique" name="frequence_don" value="unique" class="peer/unique sr-only"
                 checked>
-              <label for="frequence_unique"
-                class="flex-1 py-3 text-center  cursor-pointer select-none bg-white text-black 16px] font-medium 
+              <label for="frequence_unique" class="flex-1 py-3 text-center  cursor-pointer select-none bg-white text-black 16px] font-medium 
                 transition-colors peer-checked/unique:bg-black peer-checked/unique:text-white">
                 Versement unique
               </label>
               <input type="radio" id="frequence_periodique" name="frequence_don" value="periodique"
                 class="peer/periodique sr-only rounded-b-lg">
-              <label for="frequence_periodique"
-                class="flex-1 py-3 text-center rounded-b-lg cursor-pointer select-none bg-white text-black 16px] 
+              <label for="frequence_periodique" class="flex-1 py-3 text-center rounded-b-lg cursor-pointer select-none bg-white text-black 16px] 
                 font-medium transition-colors peer-checked/periodique:bg-black peer-checked/periodique:text-white">
                 Versement mensuel
               </label>
@@ -124,8 +122,8 @@
               <div>
                 <label for="montant" class="block text-[16px] font-medium mb-1">Montant :</label>
                 <div class="flex items-center gap-2">
-                  <input class="border rounded p-2 text-[16px]" aria-describedby="erreur-montant" aria-invalid="true"
-                    type="text" id="montant" name="montant" pattern="^\d+$" max="9999999999">
+                  <input class="montantChoisi border rounded p-2 text-[16px]" aria-describedby="erreur-montant"
+                    aria-invalid="true" type="text" id="montant" name="montant" pattern="^\d+$" max="9999999999">
                   <span class="px-2  text-[18px] text-center font-medium">$</span>
                 </div>
                 <div id="erreur-montant" class="text-red-600 text-sm mt-1"></div>
@@ -149,59 +147,60 @@
         <!-- Le fieldset / conteneur blanc prend toute la largeur -->
         <fieldset class="w-full bg-white rounded-lg p-6 ">
           <legend class="px-2 text-[18px] text-center font-medium mb-4">Vos coordonnées</legend>
-      
+
           <!-- Conteneur interne : centré au milieu de la boîte blanche (max 400px) -->
           <div class="max-w-100 mx-auto space-y-4">
-      
+
             <div>
               <label for="nom" class="block font-medium">Nom :</label>
-              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-nom" type="text" id="nom"
-                name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name" required>
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-nom" type="text"
+                id="nom" name="nom" minlength="2" maxlength="30" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="family-name"
+                required>
               <div id="erreur-nom" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="prenom" class="block font-medium">Prénom :</label>
               <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-prenom" type="text"
                 id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ]+$" autocomplete="given-name" required>
               <div id="erreur-prenom" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="telephone" class="block font-medium">Téléphone :</label>
               <input class="border rounded w-full p-2" aria-describedby="erreur-telephone" type="tel" id="telephone"
                 name="telephone" pattern="[0-9]{10,15}" minlength="10" maxlength="15" autocomplete="tel" required>
               <div id="erreur-telephone" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="entreprise" class="block font-medium">Entreprise (facultatif) :</label>
-              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-entreprise" type="text"
-                id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
+              <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-entreprise"
+                type="text" id="entreprise" name="entreprise" pattern="^[a-zA-ZÀ-ÿ]+$">
               <div id="erreur-entreprise" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="email" class="block font-medium">Courriel :</label>
               <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-email" type="email"
                 id="email" name="email" autocomplete="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" required>
               <div id="erreur-email" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="adresse" class="block font-medium">Adresse (ex: 000 rue des Peupliers) :</label>
               <input class="border rounded w-full p-2" aria-invalid="true" aria-describedby="erreur-adresse" type="text"
                 id="adresse" autocomplete="street-address" name="adresse" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$" required>
               <div id="erreur-adresse" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="ville" class="block font-medium">Ville :</label>
               <input class="border rounded w-full max-w-50 p-2" aria-invalid="true" aria-describedby="erreur-ville"
                 type="text" id="ville" name="ville" pattern="^[a-zA-ZÀ-ÿ'\-]+$" required>
               <div id="erreur-ville" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
+
             <div>
               <label for="code-postal" class="block font-medium">Code postal :</label>
               <input class="border rounded w-full max-w-30 p-2" aria-invalid="true" aria-describedby="erreur-codepostal"
@@ -209,15 +208,15 @@
                 pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" required>
               <div id="erreur-codepostal" class="text-red-600 text-sm mt-1"></div>
             </div>
-      
-        
+
+
             <div class="flex justify-between gap-4 pt-4">
               <button type="button"
                 class="boutonRetour1 flex-1 border-blue-600 border-2 py-2 bg-white text-blue-600 font-medium rounded hover:bg-blue-50">Retour</button>
               <button type="button" class="bouton2 flex-1 border-red-600 border-2 py-2 bg-red-600 transition duration-200 ease-in-out 
                 hover:-translate-y-0.5 cursor-pointer text-white font-medium rounded hover:bg-red-800">Suivant</button>
             </div>
-      
+
           </div>
         </fieldset>
       </section>
@@ -225,12 +224,12 @@
       <!-- SECTION 3: PAIEMENT -->
       <section class="etape3 hidden">
         <fieldset class="rounded-lg p-3 pb-4 pt-4 sm:p-4">
-        <div class="flex items-center px-2">
-          <legend class="mx-auto text-[18px] font-medium text-center">
-            Mode de paiement
-          </legend>
-          
-        </div>
+          <div class="flex items-center px-2">
+            <legend class="mx-auto text-[18px] font-medium text-center">
+              Mode de paiement
+            </legend>
+
+          </div>
 
           <div class="mt-3 space-y-4">
 
@@ -269,18 +268,50 @@
             <div>
               <label for="cc-number" class="block 16px] font-medium mb-1">Numéro de la carte :</label>
               <input class="border rounded w-full p-2 16px]" type="text" id="cc-number" name="numero_carte"
-                autocomplete="cc-number" inputmode="numeric" maxlength="19"
+                autocomplete="cc-number" inputmode="numeric" maxlength="16"
                 pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$" required>
               <div id="erreur-cc-number" class="text-red-600 text-sm mt-1"></div>
             </div>
 
-            <div>
-              <label for="expiration" class="block 16px] font-medium mb-1">Expiration :</label>
-              <input class="border rounded w-28 p-2 16px]" type="text" id="expiration" autocomplete="cc-exp"
-                name="expiration" maxlength="5" placeholder="MM/AA" inputmode="numeric" required>
-              <div id="erreur-expiration" class="text-red-600 text-sm mt-1"></div>
-            </div>
 
+            <div>
+              <label for="expireMM" class="block font-medium">Date d'expiration :</label>
+              <div class="flex gap-2">
+                <div class="flex-1">
+                  <select id="expireMM" name="expireMM" required autocomplete="exp-mmois"
+                    class="border rounded p-2 w-full">
+                    <option value="" disabled selected>Mois</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <div id="erreur-expireMM" class="text-red-600 text-sm mt-1"></div>
+                </div>
+
+                <div class="flex-1">
+                  <select id="expireAA" name="expireAA" required autocomplete="exp-annee"
+                    class="border rounded p-2 w-full">
+                    <option value="" disabled selected>Année</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                    <option value="31">2031</option>
+                  </select>
+                  <div id="erreur-expireAA" class="text-red-600 text-sm mt-1"></div>
+                </div>
+              </div>
+            </div>
             <div>
               <label for="cvc" class="block 16px] font-medium mb-1">Code de sécurité (CVC) :</label>
               <input class="border rounded w-20 p-2 16px]" type="text" id="cvc" name="cvc_carte" autocomplete="cc-csc"
@@ -302,56 +333,58 @@
       <!-- SECTION 4: RÉSUMÉ -->
       <section class="etape4 hidden">
         <fieldset class=" rounded-lg pb-4 pt-4">
-          <legend class="px-2  text-[18px] text-center font-medium">Résumé des informations du don</legend>
+          <legend class="px-2  text-[24px] text-center font-medium">Résumé des informations du don</legend>
+
+          <h3 class="16px] font-medium">Montant du don : <span id="resume_montant"
+              class="font-bold text-green-700"></span></h3>
+          <div class="py-2">
+            <a href="#"
+              class="modifierMontant inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
+              <span id="modifierMontant">Modifier</span>
+              <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+            </a>
+          </div>
+
+          <hr class="my-2">
+
+
           <div class="m-2 space-y-2 16px]">
             <p class=" font-medium">Nom du donateur : <span id="resume_nom" class="font-bold"></span></p>
             <p class=" font-medium">Prénom du donateur : <span id="resume_prenom" class="font-bold"></span></p>
             <p class="font-medium">Téléphone : <span id="resume_telephone" class="font-bold"></span></p>
             <p class=" font-medium">Courriel : <span id="resume_couriel" class="font-bold"></span></p>
             <p class=" font-medium">Adresse : <span id="resume_adresse" class="font-bold"></span></p>
-
+            <p class=" font-medium">Ville : <span id="resume_ville" class="font-bold"></span></p>
+            <p class=" font-medium">Code postal : <span id="resume_codePostal" class="font-bold"></span></p>
+            <p class=" font-medium hidden">Entreprise : <span id="resume_entreprise" class="font-bold "></span></p>
             <div class="py-2">
               <a href="#"
                 class="modifierDonnateur inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
-                <span>Modifier</span>
+                <span id="modifierDonnateur">Modifier</span>
                 <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
               </a>
             </div>
 
             <hr class="my-2">
-
             <p class="font-medium">Numéro de la carte : <span id="resume_carte" class="font-bold"></span></p>
             <p class="font-medium">Expiration : <span id="resume_expiration" class="font-bold"></span></p>
-            <p class="font-medium">CCV : <span id="resume_ccv" class="font-bold"></span></p>
+            <p class="font-medium">CVC : <span id="resume_cvc" class="font-bold"></span></p>
 
             <div class="py-2">
               <a href="#"
                 class="modifierCarte inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
-                <span>Modifier</span>
+                <span id="modifierInfosCarte">Modifier</span>
                 <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
               </a>
             </div>
 
-            <hr class="my-2">
-
-            <h3 class="16px] font-medium">Montant du don : <span id="resume_montant"
-                class="font-bold text-green-700"></span></h3>
-
-            <div class="py-2">
-              <a href="#"
-                class="modifierMontant inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
-                <span>Modifier</span>
-                <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
-              </a>
-            </div>
           </div>
         </fieldset>
       </section>
 
       <div class="flex justify-center mt-6">
-        <button
-          class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-2xl boutonEnvoie 16px]"
-          type="submit">Envoyer le don</button>
+        <button class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-2xl boutonEnvoie [16px]transition duration-200 ease-in-out 
+                hover:-translate-y-0.5 cursor-pointer" type="submit">Envoyer le don</button>
       </div>
     </form>
   </main>

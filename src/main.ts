@@ -9,6 +9,37 @@ const etape2 = document.querySelector('.etape2');
 const etape3 = document.querySelector('.etape3');
 const etape4 = document.querySelector('.etape4');
 
+//Résumé des données des champs 
+const prenom = document.getElementById('prenom')as HTMLInputElement;
+const nom = document.getElementById('nom')as HTMLInputElement;
+const telephone = document.getElementById('telephone')as HTMLInputElement;
+const entreprise = document.getElementById('entreprise')as HTMLInputElement;
+const email = document.getElementById('email')as HTMLInputElement;
+const adresse = document.getElementById('adresse')as HTMLInputElement;
+const ville = document.getElementById('ville')as HTMLInputElement;
+const codePostal = document.getElementById('code-postal')as HTMLInputElement;
+const numeroCarte = document.getElementById('cc-number') as HTMLInputElement;
+const expireMM = document.getElementById('expireMM') as HTMLSelectElement;
+const expireAA = document.getElementById('expireAA') as HTMLSelectElement;
+const cvcNumber = document.getElementById('cvc') as HTMLInputElement;
+
+
+const resume_nom = document.getElementById('resume_nom')as HTMLInputElement;
+const resume_prenom = document.getElementById('resume_prenom')as HTMLInputElement;
+const resume_telephone = document.getElementById('resume_telephone')as HTMLInputElement;
+const resume_codePostal = document.getElementById('resume_codePostal')as HTMLInputElement;
+const resume_ville = document.getElementById('resume_ville')as HTMLInputElement;
+const resume_adresse = document.getElementById('resume_adresse')as HTMLInputElement;
+const resume_couriel = document.getElementById('resume_couriel')as HTMLInputElement;
+const resume_entreprise = document.getElementById('resume_entreprise')as HTMLInputElement;
+const resume_carte = document.getElementById('resume_carte')as HTMLInputElement;
+const resume_expiration = document.getElementById('resume_expiration')as HTMLInputElement;
+const resume_cvc = document.getElementById('resume_cvc')as HTMLInputElement;
+const resume_montant = document.getElementById('resume_montant')as HTMLInputElement;
+const inputMontant = document.getElementById('montant') as HTMLInputElement;
+
+
+
 //Bouton radio
 const optionsMontant = document.querySelectorAll<HTMLInputElement>('input[name="montant_fixe"]');
 optionsMontant.forEach((radio) => {
@@ -90,6 +121,7 @@ function navigationEtapes() {
 
   bouton3?.addEventListener("click", () => {
     if (validerEtape(2)) {
+      mettreAJourResume();
       etape3?.classList.add("hidden");
       bouton3?.classList.add("hidden");
       etape4?.classList.remove("hidden");
@@ -140,21 +172,25 @@ async function obtenirMessages(): Promise<void> {
 }
 obtenirMessages();
 
-function validerChamp(champ: HTMLInputElement): boolean {
+function validerChamp(champ: HTMLInputElement | HTMLSelectElement): boolean {
   const id = champ.id;
   const erreurElement = document.getElementById(`erreur-${id}`) as HTMLDivElement;
 
-  if (champ.validity.valueMissing && messagesJSON[id]?.vide) {
+  if (erreurElement) erreurElement.innerText = '';
+  if ((champ.validity.valueMissing || champ.value === '') && messagesJSON[id]?.vide) {
     if (erreurElement) erreurElement.innerText = messagesJSON[id].vide!;
     return false;
   } 
-  if (champ.validity.typeMismatch && messagesJSON[id]?.type) {
-    if (erreurElement) erreurElement.innerText = messagesJSON[id].type!;
-    return false;
-  } 
-  if (champ.validity.patternMismatch && messagesJSON[id]?.pattern) {
-    if (erreurElement) erreurElement.innerText = messagesJSON[id].pattern!;
-    return false;
+
+  if (champ instanceof HTMLInputElement) {
+    if (champ.validity.typeMismatch && messagesJSON[id]?.type) {
+      if (erreurElement) erreurElement.innerText = messagesJSON[id].type!;
+      return false;
+    } 
+    if (champ.validity.patternMismatch && messagesJSON[id]?.pattern) {
+      if (erreurElement) erreurElement.innerText = messagesJSON[id].pattern!;
+      return false;
+    }
   }
 
   return true;
@@ -169,13 +205,44 @@ function validerEtape(etape: number): boolean {
       .every(valide => valide);
   }
 
-  if (etape === 2) {
-    const champs = ['cc-number', 'expiration', 'cvc'];
-    return champs
-      .map(id => document.getElementById(id) as HTMLInputElement)
-      .map(element => validerChamp(element))
-      .every(valide => valide);
-  }
+ if (etape === 2) {
+  const champs = ['cc-number', 'expireMM', 'expireAA', 'cvc'];
+  return champs
+    .map(id => document.getElementById(id) as HTMLInputElement | HTMLSelectElement)
+    .filter((element): element is HTMLInputElement | HTMLSelectElement => element !== null)
+    .map(element => validerChamp(element))
+    .every(valide => valide);
+}
 
   return false;
+}
+
+function mettreAJourResume(): void {
+  // Informations personnelles
+  if (resume_nom && nom) resume_nom.textContent = nom.value;
+  if (resume_prenom && prenom) resume_prenom.textContent = prenom.value;
+  if (resume_telephone && telephone) resume_telephone.textContent = telephone.value;
+  if (resume_couriel && email) resume_couriel.textContent = email.value;
+  if (resume_adresse && adresse) resume_adresse.textContent = adresse.value;
+  if (resume_ville && ville) resume_ville.textContent = ville.value;
+  if (resume_codePostal && codePostal) resume_codePostal.textContent = codePostal.value;
+
+  if (resume_entreprise && entreprise) {
+    const conteneurEntreprise = resume_entreprise.parentElement;
+    if (entreprise.value.trim() !== '') {
+      resume_entreprise.textContent = entreprise.value;
+      conteneurEntreprise?.classList.remove('hidden');
+    } else {
+      conteneurEntreprise?.classList.add('hidden');
+    }
+  }
+  if (resume_carte) resume_carte.textContent = numeroCarte.value;
+  
+  if (resume_expiration && expireMM && expireAA) {
+    resume_expiration.textContent = `${expireMM.value}/${expireAA.value}`;
+  }
+  if (resume_cvc) resume_cvc.textContent = cvcNumber.value;
+  if (resume_montant && inputMontant) {
+    resume_montant.textContent = `${inputMontant.value} $`;
+  }
 }
