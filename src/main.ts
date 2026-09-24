@@ -40,12 +40,12 @@ const inputMontant = document.getElementById('montant') as HTMLInputElement;
 const etape1Reussi =  document.getElementById('etape1_reussi') as HTMLInputElement;
 const etape2Reussi =  document.getElementById('etape2_reussi') as HTMLInputElement;
 const etape3Reussi =  document.getElementById('etape3_reussi') as HTMLInputElement;
-const etape4Reussi =  document.getElementById('etape4_reussi') as HTMLInputElement;
+
 
 const etape1Texte = document.getElementById('etape1_texte') as HTMLInputElement;
 const etape2Texte = document.getElementById('etape2_texte') as HTMLInputElement;
 const etape3Texte = document.getElementById('etape3_texte') as HTMLInputElement;
-const etape4Texte = document.getElementById('etape4_texte') as HTMLInputElement;
+
 
 
 //Bouton radio
