@@ -18,34 +18,46 @@
     <ol class="flex flex-row items-center justify-around gap-5 sm:gap-5 list-none p-0 m-0">
       <!-- Étape 1 (Validée ou Active) -->
       <li aria-current="step" class="flex-1 text-center etape-nav-1">
-        <a href="#" class="block pb-2 border-b-4 border-red-800 font-semibold text-red-800">
-          <span class="sr-only">Étape 1 </span>
-          <span class="sm:hidden">1</span>
-          <span class="hidden sm:inline">Type de don</span>
+        <a href="#" class="flex-col items-center pb-2 border-b-4 border-[#155DFC] font-semibold text-[#155DFC]">
+          <img id="etape1_reussi" class="hidden mx-auto" src="/src/assets/reussit.svg" alt="étape-réussie">
+          <div id="etape1_texte" class="">
+            <span class="sr-only">Étape 1 </span>
+            <span class="sm:hidden">1</span>
+            <span class="hidden sm:inline">Type de don</span>
+          </div>
         </a>
       </li>
       <!-- Étape 2 -->
       <li class="flex-1 text-center etape-nav-2">
-        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-black">
-          <span class="sr-only">Étape 2 </span>
-          <span class="sm:hidden">2</span>
-          <span class="hidden  sm:inline">Informations</span>
+        <a href="" class="flex flex-col items-center pb-2 border-b-2 border-gray-300 text-black">
+          <img id="etape2_reussi" class=" mx-auto hidden" src="/src/assets/reussit.svg" alt="étape-réussie">
+          <div id="etape2_texte" class="">
+            <span class="sr-only">Étape 2 </span>
+            <span class="sm:hidden">2</span>
+            <span class="hidden sm:inline">Informations</span>
+          </div>
         </a>
       </li>
       <!-- Étape 3 -->
       <li class="flex-1 text-center etape-nav-3">
-        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-black">
-          <span class="sr-only">Étape 3 </span>
-          <span class="sm:hidden">3</span>
-          <span class="hidden sm:inline">Paiement</span>
+        <a href="" class="flex flex-col items-center pb-2 border-b-2 border-gray-300 text-black">
+          <img id="etape3_reussi" class="mx-auto hidden" src="/src/assets/reussit.svg" alt="étape-réussie">
+          <div id="etape3_texte" class="">
+            <span class="sr-only">Étape 3 </span>
+            <span class="sm:hidden">3</span>
+            <span class="hidden sm:inline">Paiement</span>
+          </div>
         </a>
       </li>
       <!-- Étape 4 -->
       <li class="flex-1 text-center etape-nav-4">
-        <a href="#" class="block pb-2 border-b-2 border-gray-300 text-black">
-          <span class="sr-only">Étape 4 </span>
-          <span class="sm:hidden">4</span>
-          <span class="hidden sm:inline">Envoi</span>
+        <a href="" class="block pb-2 border-b-2 border-gray-300 text-black">
+          <img id="etape4_reussi" class="hidden mx-auto" src="/src/assets/reussit.svg" alt="étape-réussie">
+          <div id="etape4_texte" class="">
+            <span class="sr-only">Étape 4 </span>
+            <span class="sm:hidden">4</span>
+            <span class="hidden sm:inline">Envoi</span>
+          </div>
         </a>
       </li>
     </ol>
@@ -144,11 +156,8 @@
 
       <!-- SECTION 2: COORDONNÉES -->
       <section class="etape2 hidden">
-        <!-- Le fieldset / conteneur blanc prend toute la largeur -->
         <fieldset class="w-full bg-white rounded-lg p-6 ">
           <legend class="px-2 text-[18px] text-center font-medium mb-4">Vos coordonnées</legend>
-
-          <!-- Conteneur interne : centré au milieu de la boîte blanche (max 400px) -->
           <div class="max-w-100 mx-auto space-y-4">
 
             <div>
@@ -338,11 +347,11 @@
           <h3 class="16px] font-medium">Montant du don : <span id="resume_montant"
               class="font-bold text-green-700"></span></h3>
           <div class="py-2">
-            <a href="#"
-              class="modifierMontant inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
+            <button id="btnRetourEtape1" type="button"
+              class="inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium hover:bg-red-700 transition-colors">
               <span id="modifierMontant">Modifier</span>
-              <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
-            </a>
+              <img id="boutonModifierMontant" class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+            </button>
           </div>
 
           <hr class="my-2">
@@ -358,11 +367,11 @@
             <p class=" font-medium">Code postal : <span id="resume_codePostal" class="font-bold"></span></p>
             <p class=" font-medium hidden">Entreprise : <span id="resume_entreprise" class="font-bold "></span></p>
             <div class="py-2">
-              <a href="#"
-                class="modifierDonnateur inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
-                <span id="modifierDonnateur">Modifier</span>
-                <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
-              </a>
+              <button id="btnRetourEtape2" type="button"
+                class="inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium hover:bg-red-700 transition-colors">
+                <span class="pointer-events-none">Modifier</span>
+                <img class="w-5 h-5 pointer-events-none" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+              </button>
             </div>
 
             <hr class="my-2">
@@ -371,11 +380,11 @@
             <p class="font-medium">CVC : <span id="resume_cvc" class="font-bold"></span></p>
 
             <div class="py-2">
-              <a href="#"
-                class="modifierCarte inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium">
-                <span id="modifierInfosCarte">Modifier</span>
-                <img class="w-5 h-5" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
-              </a>
+              <button id="btnRetourEtape3" type="button"
+                class="inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl bg-red-600 no-underline text-sm font-medium hover:bg-red-700 transition-colors">
+                <span class="pointer-events-none">Modifier</span>
+                <img class="w-5 h-5 pointer-events-none" src="/src/assets/nouveau_crayon.svg" alt="Modifier">
+              </button>
             </div>
 
           </div>

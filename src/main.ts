@@ -8,7 +8,6 @@ const etape1 = document.querySelector('.etape1');
 const etape2 = document.querySelector('.etape2');
 const etape3 = document.querySelector('.etape3');
 const etape4 = document.querySelector('.etape4');
-
 //Résumé des données des champs 
 const prenom = document.getElementById('prenom')as HTMLInputElement;
 const nom = document.getElementById('nom')as HTMLInputElement;
@@ -22,8 +21,6 @@ const numeroCarte = document.getElementById('cc-number') as HTMLInputElement;
 const expireMM = document.getElementById('expireMM') as HTMLSelectElement;
 const expireAA = document.getElementById('expireAA') as HTMLSelectElement;
 const cvcNumber = document.getElementById('cvc') as HTMLInputElement;
-
-
 const resume_nom = document.getElementById('resume_nom')as HTMLInputElement;
 const resume_prenom = document.getElementById('resume_prenom')as HTMLInputElement;
 const resume_telephone = document.getElementById('resume_telephone')as HTMLInputElement;
@@ -38,6 +35,17 @@ const resume_cvc = document.getElementById('resume_cvc')as HTMLInputElement;
 const resume_montant = document.getElementById('resume_montant')as HTMLInputElement;
 const inputMontant = document.getElementById('montant') as HTMLInputElement;
 
+//Les liens pour la réussite du formulaire 
+
+const etape1Reussi =  document.getElementById('etape1_reussi') as HTMLInputElement;
+const etape2Reussi =  document.getElementById('etape2_reussi') as HTMLInputElement;
+const etape3Reussi =  document.getElementById('etape3_reussi') as HTMLInputElement;
+const etape4Reussi =  document.getElementById('etape4_reussi') as HTMLInputElement;
+
+const etape1Texte = document.getElementById('etape1_texte') as HTMLInputElement;
+const etape2Texte = document.getElementById('etape2_texte') as HTMLInputElement;
+const etape3Texte = document.getElementById('etape3_texte') as HTMLInputElement;
+const etape4Texte = document.getElementById('etape4_texte') as HTMLInputElement;
 
 
 //Bouton radio
@@ -60,6 +68,8 @@ optionsMontant.forEach((radio) => {
 const boutonRetour1 = document.querySelector('.boutonRetour1');
 const boutonRetour2 = document.querySelector('.boutonRetour2');
 const boutonEnvoie = document.querySelector('.boutonEnvoie');
+
+
 
 // Configuration du formulaire
 document.documentElement.classList.add('js');
@@ -85,14 +95,25 @@ function mettreAJourStep(etapeActive: number): void {
   etapesNav.forEach((li, index) => {
     if (!li) return;
     const lien = li.querySelector('a');
-    const estActive = index + 1 === etapeActive;
-
-    if (estActive) {
+    const numeroEtape = index + 1;
+    if (numeroEtape === etapeActive) {
+  
       li.setAttribute('aria-current', 'step');
-      if (lien) lien.className = 'block pb-2 border-b-8 border-red-800 font-semibold text-red-800';
-    } else {
+      if (lien) {
+        lien.className = 'block pb-2 border-b-8 border-red-800 font-semibold text-red-800';
+      }
+    } else if (numeroEtape < etapeActive) {
+      
       li.removeAttribute('aria-current');
-      if (lien) lien.className = 'block pb-2 border-b-2 border-black-300 text-black';
+      if (lien) {
+        lien.className = 'block pb-2 border-b-4 border-[#155DFC] font-semibold text-[#155DFC]';
+      }
+    } else {
+      
+      li.removeAttribute('aria-current');
+      if (lien) {
+        lien.className = 'block pb-2 border-b-2 border-black-300 text-black';
+      }
     }
   });
 }
@@ -107,6 +128,9 @@ function navigationEtapes() {
     etape2?.classList.remove("hidden");
     bouton2?.classList.remove("hidden");
     mettreAJourStep(2);
+    etape1Reussi.classList.remove("hidden");
+    etape1Texte.classList.add("hidden");
+
   });
 
   bouton2?.addEventListener("click", () => {
@@ -116,6 +140,8 @@ function navigationEtapes() {
       etape3?.classList.remove("hidden");
       bouton3?.classList.remove("hidden");
       mettreAJourStep(3);
+      etape2Reussi.classList.remove("hidden");
+    etape2Texte.classList.add("hidden");
     }
   });
 
@@ -127,11 +153,18 @@ function navigationEtapes() {
       etape4?.classList.remove("hidden");
       boutonEnvoie?.classList.remove("hidden");
       mettreAJourStep(4);
+      etape3Reussi.classList.remove("hidden");
+    etape3Texte.classList.add("hidden");
     }
   });
 }
 
-// Navigation arrière
+const modifierMontant = document.getElementById('modifierMontant');
+const btnRetourEtape2 = document.getElementById('btnRetourEtape2');
+const btnRetourEtape3 = document.getElementById('btnRetourEtape3');
+// 2. Écouteur d'événement robuste
+navigationRetour();
+
 function navigationRetour() {
   boutonRetour1?.addEventListener("click", () => {
     etape2?.classList.add("hidden");
@@ -148,6 +181,56 @@ function navigationRetour() {
     bouton2?.classList.remove("hidden");
     mettreAJourStep(2);
   });
+
+  
+  if (modifierMontant) {
+    modifierMontant.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      etape4?.classList.add("hidden");
+      boutonEnvoie?.classList.add("hidden");
+      etape2?.classList.add("hidden");
+      etape3?.classList.add("hidden");
+      etape1?.classList.remove("hidden");
+      bouton1?.classList.remove("hidden");
+
+  
+      mettreAJourStep(1);
+    });
+  }
+  if (btnRetourEtape2) {
+  btnRetourEtape2.addEventListener("click", (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    etape4?.classList.add("hidden");
+    boutonEnvoie?.classList.add("hidden");
+
+    etape1?.classList.add("hidden");
+    etape3?.classList.add("hidden");
+
+    etape2?.classList.remove("hidden");
+    bouton2?.classList.remove("hidden"); 
+    mettreAJourStep(2);
+  });
+
+}
+if (btnRetourEtape3) {
+  btnRetourEtape3.addEventListener("click", (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    etape4?.classList.add("hidden");
+    boutonEnvoie?.classList.add("hidden");
+    etape1?.classList.add("hidden");
+    etape3?.classList.add("hidden");
+    etape3?.classList.remove("hidden");
+    bouton3?.classList.remove("hidden"); 
+
+    mettreAJourStep(3);
+  });
+
+}
 }
 
 navigationEtapes();
