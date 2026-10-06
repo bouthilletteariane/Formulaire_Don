@@ -1,6 +1,5 @@
 import './style.css';
 
-// Navigation principales
 const bouton1 = document.querySelector('.bouton1');
 const bouton2 = document.querySelector('.bouton2');
 const bouton3 = document.querySelector('.bouton3');
@@ -8,7 +7,6 @@ const etape1 = document.querySelector('.etape1');
 const etape2 = document.querySelector('.etape2');
 const etape3 = document.querySelector('.etape3');
 const etape4 = document.querySelector('.etape4');
-//Résumé des données des champs 
 const prenom = document.getElementById('prenom')as HTMLInputElement;
 const nom = document.getElementById('nom')as HTMLInputElement;
 const telephone = document.getElementById('telephone')as HTMLInputElement;
@@ -162,7 +160,7 @@ function navigationEtapes() {
 const modifierMontant = document.getElementById('modifierMontant');
 const btnRetourEtape2 = document.getElementById('btnRetourEtape2');
 const btnRetourEtape3 = document.getElementById('btnRetourEtape3');
-// 2. Écouteur d'événement robuste
+
 navigationRetour();
 
 function navigationRetour() {
